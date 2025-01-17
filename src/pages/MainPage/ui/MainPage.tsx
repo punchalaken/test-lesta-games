@@ -1,4 +1,4 @@
-import { MainContent } from "../../../widgets/MainContent";
+import { MainContent } from "@widgets/MainContent";
 
 export const MainPage = () => {
   return <MainContent />

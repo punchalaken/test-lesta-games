@@ -12,7 +12,7 @@ const navbarObject: { id: number; text: string; to: string }[] = [
 	{
 		id: 1,
 		text: "Виды кораблей",
-		to: "/ship-types",
+		to: "/ships",
 	},
 ];
 
