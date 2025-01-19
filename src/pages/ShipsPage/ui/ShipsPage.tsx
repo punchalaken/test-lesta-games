@@ -3,9 +3,9 @@ import style from "./ShipsPage.module.scss";
 
 export const ShipsPage = () => {
 	return (
-		<div className={`${style.ShipsPage}`}>
+		<main className={`${style.ShipsPage}`}>
 			<ShipsContent />
-		</div>
+		</main>
 	);
 };
 

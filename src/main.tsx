@@ -3,15 +3,19 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router";
 import { ApolloProvider } from "@apollo/client";
 import { client } from "@shared/config/apolloClient/apolloClient.ts";
+import { Provider } from "react-redux";
+import { store } from "./store";
 
 import App from "@app/App.tsx";
 
 createRoot(document.getElementById("root")!).render(
 	<StrictMode>
-		<ApolloProvider client={client}>
-			<BrowserRouter>
-				<App />
-			</BrowserRouter>
-		</ApolloProvider>
+		<Provider store={store}>
+			<ApolloProvider client={client}>
+				<BrowserRouter>
+					<App />
+				</BrowserRouter>
+			</ApolloProvider>
+		</Provider>
 	</StrictMode>
 );

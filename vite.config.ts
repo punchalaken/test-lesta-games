@@ -11,6 +11,7 @@ export default defineConfig({
 			"@shared": "/src/shared",
 			"@pages": "/src/pages",
 			"@widgets": "/src/widgets",
+			"@entities": "/src/entities",
 		},
 	},
 });
