@@ -1,94 +1,91 @@
-.ShipList {
+.ShipCard {
 	width: 100%;
-	min-height: var(--content-height);
+	max-width: 1100px;
 
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
-	gap: 20px;
+	border: var(--card-border);
 
-	.ShipCard {
+	.ShipCard__header {
 		width: 100%;
-		max-width: 1100px;
+		height: var(--ship-card-header-heigh);
 
-		border: var(--card-border);
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
-		.ShipCard__header {
-			width: 100%;
-			height: var(--ship-card-header-heigh);
+		border-bottom: var(--card-border);
+
+		@media screen and (max-width: 900px) {
+			height: 120px;
+			flex-direction: column;
+		}
+
+		.ShipCard__header__flex {
+			height: 100%;
 
 			display: flex;
 			align-items: center;
 			justify-content: center;
 
-			border-bottom: var(--card-border);
+			&:not(:last-child) {
+				border-right: var(--card-border);
 
-			.ShipCard__flex {
-				height: 100%;
-
-				display: flex;
-				align-items: center;
-				justify-content: center;
-			}
-
-			.ShipCard__title {
-				width: 40%;
-			}
-
-			.ShipCard__type {
-				width: 40%;
-
-				border-inline: var(--card-border);
-			}
-
-			.ShipCard__level {
-				width: 20%;
+				@media screen and (max-width: 900px) {
+					border-right: none;
+					border-bottom: var(--card-border);
+				}
 			}
 		}
 
-		.ShipCard__content {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
+		.ShipCard__title {
+			width: 40%;
+		}
 
-			.ShipCard__image {
-				position: relative;
+		.ShipCard__type {
+			width: 40%;
+		}
 
-				max-width: 40%;
-			}
-			.ShipCard__description {
-				padding: 10px;
-				width: 60%;
+		.ShipCard__level {
+			width: 20%;
+		}
+
+		.Mobile_width {
+			@media screen and (max-width: 900px) {
+				width: 100%;
 			}
 		}
 	}
 
-	.ShipList__pagination {
-		width: 100%;
-
+	.ShipCard__content {
 		display: flex;
 		align-items: center;
-		justify-content: center;
-		gap: 20px;
+		justify-content: space-between;
 
-		padding-block: 10px;
+		@media screen and (max-width: 900px) {
+			flex-direction: column;
+		}
 
-		background-color: var(--background-color);
+		.ShipCard__image {
+			max-width: 40%;
 
-		position: sticky;
-		bottom: 0;
-	}
+			margin: 10px;
 
-	.pagi {
-		display: flex;
-		align-items: center;
-		justify-content: center;
+			position: relative;
 
-		padding: 20px;
+			@media screen and (max-width: 900px) {
+				max-width: 400px;
+			}
 
-		border: var(--card-border);
+			.ShipCard__iamge__ship {
+				width: 100%;
+			}
+		}
+		.ShipCard__description {
+			padding: 10px;
+			max-width: 60%;
 
-		cursor: pointer;
+			@media screen and (max-width: 900px) {
+				max-width: 700px;
+			}
+		}
 	}
 }

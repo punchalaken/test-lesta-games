@@ -30,3 +30,8 @@ export interface Ship {
 	type: Type;
 	nation: Nation;
 }
+
+export interface PageValues {
+	start: number;
+	end: number;
+}

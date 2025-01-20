@@ -1,10 +1,11 @@
-import { ShipsContent } from "@widgets/ShipsContent/ui/ShipsContent";
+import { ShipList } from "@widgets/ShipList";
+
 import style from "./ShipsPage.module.scss";
 
 export const ShipsPage = () => {
 	return (
 		<main className={`${style.ShipsPage}`}>
-			<ShipsContent />
+			<ShipList />
 		</main>
 	);
 };

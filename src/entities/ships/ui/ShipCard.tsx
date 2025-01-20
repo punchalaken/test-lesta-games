@@ -13,17 +13,17 @@ export const ShipCard: FC<ShipCardProps> = ({ item }) => {
 		<div className={`${style.ShipCard}`}>
 			<div className={`${style.ShipCard__header}`}>
 				<div
-					className={`${style.ShipCard__title} ${style.ShipCard__flex}`}
+					className={`${style.ShipCard__title} ${style.ShipCard__header__flex} ${style.Mobile_width}`}
 				>
 					{item.title}
 				</div>
 				<div
-					className={`${style.ShipCard__type} ${style.ShipCard__flex}`}
+					className={`${style.ShipCard__type} ${style.ShipCard__header__flex} ${style.Mobile_width}`}
 				>
 					{item.type.title}
 				</div>
 				<div
-					className={`${style.ShipCard__level} ${style.ShipCard__flex}`}
+					className={`${style.ShipCard__level} ${style.ShipCard__header__flex} ${style.Mobile_width}`}
 				>
 					{item.level} уровень
 				</div>
@@ -39,7 +39,7 @@ export const ShipCard: FC<ShipCardProps> = ({ item }) => {
 					<img
 						src={item.icons.medium}
 						alt={`Великолепный ${item.title}`}
-						className={`${style.ShipCard__ship}`}
+						className={`${style.ShipCard__iamge__ship}`}
 					/>
 				</div>
 
