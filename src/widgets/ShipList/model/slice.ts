@@ -22,37 +22,59 @@ const shipsSlice = createSlice({
 			if (action.payload === "level") {
 				if (state.sortOrder === "ascending") {
 					state.ships.sort((a, b) => {
-						return a.level - b.level;
+						if (a.level !== b.level) {
+							return a.level - b.level;
+						}
+						return a.title.localeCompare(b.title);
 					});
 				} else {
 					state.ships.sort((a, b) => {
-						return b.level - a.level;
+						if (a.level !== b.level) {
+							return b.level - a.level;
+						}
+						return a.title.localeCompare(b.title);
 					});
 				}
 			}
 			if (action.payload === "nation") {
 				if (state.sortOrder === "ascending") {
 					state.ships.sort((a, b) => {
-						return a.nation.name.localeCompare(
-							b.nation.name
-						);
+						if (a.nation.name !== b.nation.name) {
+							return a.nation.name.localeCompare(
+								b.nation.name
+							);
+						}
+						return a.title.localeCompare(b.title);
 					});
 				} else {
 					state.ships.sort((a, b) => {
-						return b.nation.name.localeCompare(
-							a.nation.name
-						);
+						if (a.nation.name !== b.nation.name) {
+							return b.nation.name.localeCompare(
+								a.nation.name
+							);
+						}
+						return a.title.localeCompare(b.title);
 					});
 				}
 			}
 			if (action.payload === "type") {
 				if (state.sortOrder === "ascending") {
 					state.ships.sort((a, b) => {
-						return a.type.name.localeCompare(b.type.name);
+						if (a.type.name !== b.type.name) {
+							return a.type.name.localeCompare(
+								b.type.name
+							);
+						}
+						return a.title.localeCompare(b.title);
 					});
 				} else {
 					state.ships.sort((a, b) => {
-						return b.type.name.localeCompare(a.type.name);
+						if (a.type.name !== b.type.name) {
+							return b.type.name.localeCompare(
+								a.type.name
+							);
+						}
+						return a.title.localeCompare(b.title);
 					});
 				}
 			}
