@@ -3,7 +3,7 @@ import { AppLink } from "@/shared/ui/AppLink/AppLink";
 
 export const MainContent = () => {
 	return (
-		<main className={`${style.mainContent}`}>
+		<main className={style.mainContent}>
 			<AppLink to={"/ships"}>Взглянуть на корабли</AppLink>
 		</main>
 	);

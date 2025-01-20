@@ -4,7 +4,7 @@ import style from "./ShipsPage.module.scss";
 
 export const ShipsPage = () => {
 	return (
-		<main className={`${style.ShipsPage}`}>
+		<main className={style.ShipsPage}>
 			<ShipList />
 		</main>
 	);

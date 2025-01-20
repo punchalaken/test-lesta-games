@@ -25,11 +25,11 @@ export const Pagination: FC<PaginationProps> = ({
 	const disabledNext = pageValues.end >= arrayLenght;
 
 	return (
-		<div className={`${style.Pagination}`}>
+		<div className={style.Pagination}>
 			<Button onClick={handleBackPage} disabled={disabledBack}>
 				Назад
 			</Button>
-			<div className="">
+			<div className={style.Pagination__page}>
 				Страница {currentPage} / {lastPage}
 			</div>
 			<Button onClick={handleNextPage} disabled={disabledNext}>

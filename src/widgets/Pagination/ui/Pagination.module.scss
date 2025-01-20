@@ -12,4 +12,12 @@
 
 	position: sticky;
 	bottom: 0;
+
+	.Pagination__page {
+		width: 130px;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 }

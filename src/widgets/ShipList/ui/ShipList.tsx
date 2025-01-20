@@ -1,30 +1,28 @@
-import { useQuery } from "@apollo/client";
-import { GET_VEHICLES } from "@shared/api/graphql/vehicles";
-import { Ship } from "@entities/ships/model/types";
 import { Loader } from "@shared/ui/Loader/Loader";
 import { ShipCard } from "@entities/ships";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Pagination } from "@widgets/Pagination";
-import { usePagination } from "@entities/ships/model/hooks/usePagination";
+import { usePagination } from "../model/hooks/usePagination";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store";
+import { useFetchAndUpdateShips } from "../model/hooks/useFetchShips";
 
 import style from "./ShipList.module.scss";
+import { ShipSort } from "./ShipSort";
 
 export const ShipList = () => {
-	const { data, loading, error } = useQuery(GET_VEHICLES);
-	const [sortedShips, setSortedShips] = useState<Ship[]>([]);
+	const { loading, error } = useFetchAndUpdateShips();
+
 	const { pageValues, handleNextPage, handleBackPage } =
 		usePagination(0, 10);
 
-	useEffect(() => {
-		if (data?.vehicles) {
-			const vehicles = [...data.vehicles];
+	const ships = useSelector(
+		(state: RootState) => state.ships.ships
+	);
 
-			const sorted = vehicles.sort(
-				(item1, item2) => item1.level - item2.level
-			);
-			setSortedShips(sorted);
-		}
-	}, [data]);
+	useEffect(() => {
+		console.log("Стейт был отсортирован");
+	}, [ships]);
 
 	if (loading) {
 		return <Loader />;
@@ -34,15 +32,18 @@ export const ShipList = () => {
 		return <div>Ошибка загрузки данных {error.message}</div>;
 	}
 
+	console.log(ships.slice(0, 1));
+
 	return (
-		<section className={`${style.ShipList}`}>
-			{sortedShips
+		<section className={style.ShipList}>
+			<ShipSort />
+			{ships
 				.slice(pageValues.start, pageValues.end)
 				?.map((item, index) => {
 					return <ShipCard item={item} key={index} />;
 				})}
 			<Pagination
-				arrayLenght={sortedShips.length}
+				arrayLenght={ships.length}
 				pageValues={pageValues}
 				handleBackPage={handleBackPage}
 				handleNextPage={handleNextPage}

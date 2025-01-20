@@ -7,11 +7,9 @@ interface ShipCardProps {
 }
 
 export const ShipCard: FC<ShipCardProps> = ({ item }) => {
-	console.log(item);
-
 	return (
-		<div className={`${style.ShipCard}`}>
-			<div className={`${style.ShipCard__header}`}>
+		<div className={style.ShipCard}>
+			<div className={style.ShipCard__header}>
 				<div
 					className={`${style.ShipCard__title} ${style.ShipCard__header__flex} ${style.Mobile_width}`}
 				>
@@ -28,9 +26,9 @@ export const ShipCard: FC<ShipCardProps> = ({ item }) => {
 					{item.level} уровень
 				</div>
 			</div>
-			<div className={`${style.ShipCard__content}`}>
+			<div className={style.ShipCard__content}>
 				<div
-					className={`${style.ShipCard__image}`}
+					className={style.ShipCard__image}
 					style={{
 						backgroundImage: `url(${item.nation.icons.large})`,
 						backgroundSize: "cover",
@@ -39,11 +37,11 @@ export const ShipCard: FC<ShipCardProps> = ({ item }) => {
 					<img
 						src={item.icons.medium}
 						alt={`Великолепный ${item.title}`}
-						className={`${style.ShipCard__iamge__ship}`}
+						className={style.ShipCard__iamge__ship}
 					/>
 				</div>
 
-				<div className={`${style.ShipCard__description}`}>
+				<div className={style.ShipCard__description}>
 					{item.description}
 				</div>
 			</div>

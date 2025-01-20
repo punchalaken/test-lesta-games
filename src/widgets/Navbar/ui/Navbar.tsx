@@ -18,7 +18,7 @@ const navbarObject: { id: number; text: string; to: string }[] = [
 
 export const Navbar: FC = () => {
 	return (
-		<nav className={`${style.navbar}`}>
+		<nav className={style.navbar}>
 			{navbarObject.map((item) => (
 				<AppLink to={item.to} key={item.id}>
 					{item.text}
