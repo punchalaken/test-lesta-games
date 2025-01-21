@@ -7,12 +7,12 @@ import { Navbar } from "@widgets/Navbar";
 import { AppRouter } from "./providers/router";
 
 function App() {
-	return (
-		<>
-			<Navbar />
-			<AppRouter />
-		</>
-	);
+  return (
+    <>
+      <Navbar />
+      <AppRouter />
+    </>
+  );
 }
 
 export default App;

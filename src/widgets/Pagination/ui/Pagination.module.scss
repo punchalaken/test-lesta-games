@@ -1,23 +1,23 @@
 .Pagination {
-	width: 100%;
+  width: 100%;
 
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 
-	padding-block: 10px;
+  padding-block: 10px;
 
-	background-color: var(--background-color);
+  background-color: var(--background-color);
 
-	position: sticky;
-	bottom: 0;
+  position: sticky;
+  bottom: 0;
 
-	.Pagination__page {
-		width: 130px;
+  .Pagination__page {
+    width: 130px;
 
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

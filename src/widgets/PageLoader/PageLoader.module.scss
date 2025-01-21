@@ -1,12 +1,12 @@
 .PageLoader {
-	min-height: calc(100vh - var(--navbar-height));
-    width: 100%;
+  min-height: calc(100vh - var(--navbar-height));
+  width: 100%;
 
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-	z-index: 999;
+  z-index: 999;
 
-    background-color: var(--background-color);
+  background-color: var(--background-color);
 }

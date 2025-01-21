@@ -10,38 +10,33 @@ import { useFetchAndUpdateShips } from "../model/hooks/useFetchShips";
 import style from "./ShipList.module.scss";
 
 export const ShipList = () => {
-	const { loading, error } = useFetchAndUpdateShips();
+  const { loading, error } = useFetchAndUpdateShips();
 
-	const { pageValues, handleNextPage, handleBackPage } =
-		usePagination();
+  const { pageValues, handleNextPage, handleBackPage } = usePagination();
 
-	const ships = useSelector(
-		(state: RootState) => state.ships.ships
-	);
+  const ships = useSelector((state: RootState) => state.ships.ships);
 
-	useEffect(() => {}, [ships]);
+  useEffect(() => {}, [ships]);
 
-	if (loading) {
-		return <Loader />;
-	}
+  if (loading) {
+    return <Loader />;
+  }
 
-	if (error) {
-		return <div>Ошибка загрузки данных {error.message}</div>;
-	}
+  if (error) {
+    return <div>Ошибка загрузки данных {error.message}</div>;
+  }
 
-	return (
-		<section className={style.ShipList}>
-			{ships
-				.slice(pageValues.start, pageValues.end)
-				?.map((item, index) => {
-					return <ShipCard item={item} key={index} />;
-				})}
-			<Pagination
-				arrayLenght={ships.length}
-				pageValues={pageValues}
-				handleBackPage={handleBackPage}
-				handleNextPage={handleNextPage}
-			></Pagination>
-		</section>
-	);
+  return (
+    <section className={style.ShipList}>
+      {ships.slice(pageValues.start, pageValues.end)?.map((item, index) => {
+        return <ShipCard item={item} key={index} />;
+      })}
+      <Pagination
+        arrayLenght={ships.length}
+        pageValues={pageValues}
+        handleBackPage={handleBackPage}
+        handleNextPage={handleNextPage}
+      ></Pagination>
+    </section>
+  );
 };

@@ -1,91 +1,91 @@
 .ShipCard {
-	width: 100%;
-	max-width: 1100px;
+  width: 100%;
+  max-width: 1100px;
 
-	border: var(--card-border);
+  border: var(--card-border);
 
-	.ShipCard__header {
-		width: 100%;
-		height: var(--ship-card-header-heigh);
+  .ShipCard__header {
+    width: 100%;
+    height: var(--ship-card-header-heigh);
 
-		display: flex;
-		align-items: center;
-		justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-		border-bottom: var(--card-border);
+    border-bottom: var(--card-border);
 
-		@media screen and (max-width: 900px) {
-			height: 120px;
-			flex-direction: column;
-		}
+    @media screen and (max-width: 900px) {
+      height: 120px;
+      flex-direction: column;
+    }
 
-		.ShipCard__header__flex {
-			height: 100%;
+    .ShipCard__header__flex {
+      height: 100%;
 
-			display: flex;
-			align-items: center;
-			justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-			&:not(:last-child) {
-				border-right: var(--card-border);
+      &:not(:last-child) {
+        border-right: var(--card-border);
 
-				@media screen and (max-width: 900px) {
-					border-right: none;
-					border-bottom: var(--card-border);
-				}
-			}
-		}
+        @media screen and (max-width: 900px) {
+          border-right: none;
+          border-bottom: var(--card-border);
+        }
+      }
+    }
 
-		.ShipCard__title {
-			width: 40%;
-		}
+    .ShipCard__title {
+      width: 40%;
+    }
 
-		.ShipCard__type {
-			width: 40%;
-		}
+    .ShipCard__type {
+      width: 40%;
+    }
 
-		.ShipCard__level {
-			width: 20%;
-		}
+    .ShipCard__level {
+      width: 20%;
+    }
 
-		.Mobile_width {
-			@media screen and (max-width: 900px) {
-				width: 100%;
-			}
-		}
-	}
+    .Mobile_width {
+      @media screen and (max-width: 900px) {
+        width: 100%;
+      }
+    }
+  }
 
-	.ShipCard__content {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
+  .ShipCard__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-		@media screen and (max-width: 900px) {
-			flex-direction: column;
-		}
+    @media screen and (max-width: 900px) {
+      flex-direction: column;
+    }
 
-		.ShipCard__image {
-			max-width: 40%;
+    .ShipCard__image {
+      max-width: 40%;
 
-			margin: 10px;
+      margin: 10px;
 
-			position: relative;
+      position: relative;
 
-			@media screen and (max-width: 900px) {
-				max-width: 400px;
-			}
+      @media screen and (max-width: 900px) {
+        max-width: 400px;
+      }
 
-			.ShipCard__iamge__ship {
-				width: 100%;
-			}
-		}
-		.ShipCard__description {
-			padding: 10px;
-			max-width: 60%;
+      .ShipCard__iamge__ship {
+        width: 100%;
+      }
+    }
+    .ShipCard__description {
+      padding: 10px;
+      max-width: 60%;
 
-			@media screen and (max-width: 900px) {
-				max-width: 700px;
-			}
-		}
-	}
+      @media screen and (max-width: 900px) {
+        max-width: 700px;
+      }
+    }
+  }
 }

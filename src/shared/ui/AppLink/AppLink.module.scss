@@ -1,25 +1,25 @@
 .AppLink {
-	color: var(--navbar-text-color);
+  color: var(--navbar-text-color);
 
-	text-transform: uppercase;
+  text-transform: uppercase;
 
-	a {
-		height: 100%;
-		padding: 17px;
-		border-bottom: 2px solid rgba($color: #000000, $alpha: 0);
+  a {
+    height: 100%;
+    padding: 17px;
+    border-bottom: 2px solid rgba($color: #000000, $alpha: 0);
 
-		transition:
-			border-color 0.3s ease,
-			background-color 0.3s ease;
+    transition:
+      border-color 0.3s ease,
+      background-color 0.3s ease;
 
-		@media screen and (hover: hover) {
-			&:hover {
-				background-color: var(--bg-card-hover);
-			}
-		}
-	}
+    @media screen and (hover: hover) {
+      &:hover {
+        background-color: var(--bg-card-hover);
+      }
+    }
+  }
 
-	.active {
-		border-bottom: 2px solid var(--accent-red-dark);
-	}
+  .active {
+    border-bottom: 2px solid var(--accent-red-dark);
+  }
 }

@@ -9,13 +9,13 @@ import { store } from "./store";
 import App from "@app/App.tsx";
 
 createRoot(document.getElementById("root")!).render(
-	<StrictMode>
-		<Provider store={store}>
-			<ApolloProvider client={client}>
-				<BrowserRouter>
-					<App />
-				</BrowserRouter>
-			</ApolloProvider>
-		</Provider>
-	</StrictMode>
+  <StrictMode>
+    <Provider store={store}>
+      <ApolloProvider client={client}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ApolloProvider>
+    </Provider>
+  </StrictMode>,
 );

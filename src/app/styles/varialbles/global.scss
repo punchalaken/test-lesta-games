@@ -1,23 +1,23 @@
 :root {
-	--accent-red: #fa1437;
-	--accent-red-dark: #c1112c;
+  --accent-red: #fa1437;
+  --accent-red-dark: #c1112c;
 
-	--font-roboto: "Roboto", Helvetica, Arial, sans-serif;
-	--main-color-text: #ffffffb3;
-	--line-height: 16px;
+  --font-roboto: "Roboto", Helvetica, Arial, sans-serif;
+  --main-color-text: #ffffffb3;
+  --line-height: 16px;
 
-	--navbar-height: 56px;
-	--navbar-text-color: #e5e5e5;
-	--bg-card-hover: rgba(255, 255, 255, 0.08);
+  --navbar-height: 56px;
+  --navbar-text-color: #e5e5e5;
+  --bg-card-hover: rgba(255, 255, 255, 0.08);
 
-	--content-height: calc(100vh - var(--navbar-height));
+  --content-height: calc(100vh - var(--navbar-height));
 
-	--background-color: rgba(1, 10, 25);
+  --background-color: rgba(1, 10, 25);
 
-	--card-border: 1px solid rgb(182, 182, 182);
-	
-	--color-button: rgb(182, 182, 182);
-	--color-button-active: rgb(124, 124, 124);
+  --card-border: 1px solid rgb(182, 182, 182);
 
-	--ship-card-header-heigh: 40px;
+  --color-button: rgb(182, 182, 182);
+  --color-button-active: rgb(124, 124, 124);
+
+  --ship-card-header-heigh: 40px;
 }

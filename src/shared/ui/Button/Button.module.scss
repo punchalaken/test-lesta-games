@@ -1,16 +1,16 @@
 .Button {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 10px;
-	border: var(--card-border);
-	background-color: var(--background-color);
-	color: var(--color-button);
-	cursor: pointer;
-	transition: transform 0.1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: var(--card-border);
+  background-color: var(--background-color);
+  color: var(--color-button);
+  cursor: pointer;
+  transition: transform 0.1s ease;
 }
 
 .Button:active {
-	transform: scale(0.95);
-	background-color: var(--color-button-active);
+  transform: scale(0.95);
+  background-color: var(--color-button-active);
 }
