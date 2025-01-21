@@ -1,10 +1,10 @@
 import { useQuery } from "@apollo/client";
 import { GET_VEHICLES } from "@shared/api/graphql/vehicles";
 import { useDispatch } from "react-redux";
-import { setShip } from "@widgets/ShipList/model/slice";
+import { setShip } from "@/widgets/ShipList/model/shipSlice";
 import { useEffect } from "react";
 
-export const useFetchAndUpdateShips = () => {
+export const useFetchShips = () => {
   const dispatch = useDispatch();
   const localStorageData = localStorage.getItem("vehicles");
 

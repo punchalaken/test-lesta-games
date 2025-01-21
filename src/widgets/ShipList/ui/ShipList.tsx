@@ -5,12 +5,12 @@ import { Pagination } from "@widgets/Pagination";
 import { usePagination } from "../model/hooks/usePagination";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store";
-import { useFetchAndUpdateShips } from "../model/hooks/useFetchShips";
+import { useFetchShips } from "../model/hooks/useFetchShips";
 
 import style from "./ShipList.module.scss";
 
 export const ShipList = () => {
-  const { loading, error } = useFetchAndUpdateShips();
+  const { loading, error } = useFetchShips();
 
   const { pageValues, handleNextPage, handleBackPage } = usePagination();
 

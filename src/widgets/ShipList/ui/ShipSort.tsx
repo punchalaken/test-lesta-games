@@ -1,8 +1,9 @@
-import style from "./ShipList.module.scss";
-import { setSortBy, setOrderList } from "../model/slice";
+import { setSortBy, setOrderList } from "../model/shipSlice";
 import { Button } from "@/shared/ui/Button/Button";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+
+import style from "./ShipList.module.scss";
 
 export const ShipSort = () => {
   const dispatch = useDispatch();

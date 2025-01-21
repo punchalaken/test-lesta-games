@@ -6,12 +6,12 @@ interface ShipsState {
   sortOrder: "ascending" | "descending";
 }
 
-const initialState: ShipsState = {
+export const initialState: ShipsState = {
   ships: [],
   sortOrder: "ascending",
 };
 
-const shipsSlice = createSlice({
+export const shipsSlice = createSlice({
   name: "ships",
   initialState,
   reducers: {
