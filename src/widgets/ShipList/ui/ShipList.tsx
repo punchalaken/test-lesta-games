@@ -6,9 +6,9 @@ import { usePagination } from "../model/hooks/usePagination";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store";
 import { useFetchAndUpdateShips } from "../model/hooks/useFetchShips";
+import { ShipSort } from "./ShipSort";
 
 import style from "./ShipList.module.scss";
-import { ShipSort } from "./ShipSort";
 
 export const ShipList = () => {
 	const { loading, error } = useFetchAndUpdateShips();
@@ -20,9 +20,7 @@ export const ShipList = () => {
 		(state: RootState) => state.ships.ships
 	);
 
-	useEffect(() => {
-		console.log("Стейт был отсортирован");
-	}, [ships]);
+	useEffect(() => {}, [ships]);
 
 	if (loading) {
 		return <Loader />;
@@ -31,8 +29,6 @@ export const ShipList = () => {
 	if (error) {
 		return <div>Ошибка загрузки данных {error.message}</div>;
 	}
-
-	console.log(ships.slice(0, 1));
 
 	return (
 		<section className={style.ShipList}>

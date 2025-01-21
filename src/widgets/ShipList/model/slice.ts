@@ -19,7 +19,9 @@ const shipsSlice = createSlice({
 			state.ships = action.payload;
 		},
 		setSortBy(state, action: PayloadAction<string>) {
-			if (action.payload === "level") {
+			const field = action.payload;
+
+			if (field === "level") {
 				if (state.sortOrder === "ascending") {
 					state.ships.sort((a, b) => {
 						if (a.level !== b.level) {
@@ -36,42 +38,21 @@ const shipsSlice = createSlice({
 					});
 				}
 			}
-			if (action.payload === "nation") {
+			if (field === "type" || field === "nation") {
 				if (state.sortOrder === "ascending") {
 					state.ships.sort((a, b) => {
-						if (a.nation.name !== b.nation.name) {
-							return a.nation.name.localeCompare(
-								b.nation.name
+						if (a[field].name !== b[field].name) {
+							return a[field].name.localeCompare(
+								b[field].name
 							);
 						}
 						return a.title.localeCompare(b.title);
 					});
 				} else {
 					state.ships.sort((a, b) => {
-						if (a.nation.name !== b.nation.name) {
-							return b.nation.name.localeCompare(
-								a.nation.name
-							);
-						}
-						return a.title.localeCompare(b.title);
-					});
-				}
-			}
-			if (action.payload === "type") {
-				if (state.sortOrder === "ascending") {
-					state.ships.sort((a, b) => {
-						if (a.type.name !== b.type.name) {
-							return a.type.name.localeCompare(
-								b.type.name
-							);
-						}
-						return a.title.localeCompare(b.title);
-					});
-				} else {
-					state.ships.sort((a, b) => {
-						if (a.type.name !== b.type.name) {
-							return b.type.name.localeCompare(
-								a.type.name
+						if (a[field].name !== b[field].name) {
+							return b[field].name.localeCompare(
+								a[field].name
 							);
 						}
 						return a.title.localeCompare(b.title);

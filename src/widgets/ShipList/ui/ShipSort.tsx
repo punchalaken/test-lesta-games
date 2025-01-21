@@ -12,37 +12,43 @@ export const ShipSort = () => {
 		"ascending"
 	);
 
+	const sortArray = {
+		ascending: "↑",
+		descending: "↓",
+	};
+
 	useEffect(() => {
-		if (sortValue) {
-			dispatch(setSortBy(sortValue));
-			dispatch(setOrderList(order));
-		}
+		dispatch(setOrderList(order));
+		dispatch(setSortBy(sortValue));
 	}, [sortValue, dispatch, order]);
 
 	return (
 		<div className={style.ShipList__sort}>
 			<span>Отсотрировать по: </span>
-			<Button
-				onClick={() => {
-					setSortValue("level");
-				}}
-			>
-				уровню
-			</Button>
-			<Button
-				onClick={() => {
-					setSortValue("nation");
-				}}
-			>
-				нации
-			</Button>
-			<Button
-				onClick={() => {
-					setSortValue("type");
-				}}
-			>
-				типу
-			</Button>
+			<div className={style.ShipList__sort__types}>
+				<Button
+					onClick={() => {
+						setSortValue("level");
+					}}
+				>
+					уровню
+				</Button>
+				<Button
+					onClick={() => {
+						setSortValue("nation");
+					}}
+				>
+					нации
+				</Button>
+				<Button
+					onClick={() => {
+						setSortValue("type");
+					}}
+				>
+					типу
+				</Button>
+			</div>
+
 			<Button
 				onClick={() => {
 					setOrder((prevOrder) =>
@@ -52,7 +58,7 @@ export const ShipSort = () => {
 					);
 				}}
 			>
-				порядок
+				{`порядок ${sortArray[order]}`}
 			</Button>
 		</div>
 	);

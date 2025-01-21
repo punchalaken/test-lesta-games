@@ -14,5 +14,10 @@
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: center;
+
+		.ShipList__sort__types {
+			display: flex;
+			gap: 10px;
+		}
 	}
 }
