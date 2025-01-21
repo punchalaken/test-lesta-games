@@ -7,7 +7,7 @@ import { useDispatch } from "react-redux";
 export const ShipSort = () => {
 	const dispatch = useDispatch();
 
-	const [sortValue, setSortValue] = useState<string>("level");
+	const [sortValue, setSortValue] = useState<string>("");
 	const [order, setOrder] = useState<"ascending" | "descending">(
 		"ascending"
 	);
@@ -30,6 +30,14 @@ export const ShipSort = () => {
 					onClick={() => {
 						setSortValue("level");
 					}}
+					style={
+						sortValue === "level"
+							? {
+									backgroundColor:
+										"var(--color-button-active)",
+								}
+							: {}
+					}
 				>
 					уровню
 				</Button>
@@ -37,6 +45,14 @@ export const ShipSort = () => {
 					onClick={() => {
 						setSortValue("nation");
 					}}
+					style={
+						sortValue === "nation"
+							? {
+									backgroundColor:
+										"var(--color-button-active)",
+								}
+							: {}
+					}
 				>
 					нации
 				</Button>
@@ -44,6 +60,14 @@ export const ShipSort = () => {
 					onClick={() => {
 						setSortValue("type");
 					}}
+					style={
+						sortValue === "type"
+							? {
+									backgroundColor:
+										"var(--color-button-active)",
+								}
+							: {}
+					}
 				>
 					типу
 				</Button>

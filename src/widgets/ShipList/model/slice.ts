@@ -41,19 +41,19 @@ const shipsSlice = createSlice({
 			if (field === "type" || field === "nation") {
 				if (state.sortOrder === "ascending") {
 					state.ships.sort((a, b) => {
-						if (a[field].name !== b[field].name) {
-							return a[field].name.localeCompare(
-								b[field].name
-							);
+						const aValue = a[field].name;
+						const bValue = b[field].name;
+						if (aValue !== bValue) {
+							return aValue.localeCompare(bValue);
 						}
 						return a.title.localeCompare(b.title);
 					});
 				} else {
 					state.ships.sort((a, b) => {
-						if (a[field].name !== b[field].name) {
-							return b[field].name.localeCompare(
-								a[field].name
-							);
+						const aValue = a[field].name;
+						const bValue = b[field].name;
+						if (aValue !== bValue) {
+							return bValue.localeCompare(aValue);
 						}
 						return a.title.localeCompare(b.title);
 					});

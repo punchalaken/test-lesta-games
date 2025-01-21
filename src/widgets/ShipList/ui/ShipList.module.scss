@@ -7,17 +7,17 @@
 	align-items: center;
 	justify-content: space-between;
 	gap: 20px;
+}
 
-	.ShipList__sort {
+.ShipList__sort {
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+
+	.ShipList__sort__types {
 		display: flex;
 		gap: 10px;
-		flex-wrap: wrap;
-		align-items: center;
-		justify-content: center;
-
-		.ShipList__sort__types {
-			display: flex;
-			gap: 10px;
-		}
 	}
 }

@@ -6,7 +6,6 @@ import { usePagination } from "../model/hooks/usePagination";
 import { useSelector } from "react-redux";
 import { RootState } from "@/store";
 import { useFetchAndUpdateShips } from "../model/hooks/useFetchShips";
-import { ShipSort } from "./ShipSort";
 
 import style from "./ShipList.module.scss";
 
@@ -14,7 +13,7 @@ export const ShipList = () => {
 	const { loading, error } = useFetchAndUpdateShips();
 
 	const { pageValues, handleNextPage, handleBackPage } =
-		usePagination(0, 10);
+		usePagination();
 
 	const ships = useSelector(
 		(state: RootState) => state.ships.ships
@@ -32,7 +31,6 @@ export const ShipList = () => {
 
 	return (
 		<section className={style.ShipList}>
-			<ShipSort />
 			{ships
 				.slice(pageValues.start, pageValues.end)
 				?.map((item, index) => {
