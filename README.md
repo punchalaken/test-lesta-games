@@ -8,6 +8,9 @@
 - [Vite](https://vite.dev/)
 - [Prettier](https://prettier.io/)
 - [EsLint](https://eslint.org/)
+- [Vitest](https://vitest.dev/)
+- [Apollo](https://www.apollographql.com/docs/react)
+- [SCSS](https://sass-scss.ru/guide/)
 
 ### 📦 Установка
 
