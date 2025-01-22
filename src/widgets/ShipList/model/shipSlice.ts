@@ -4,11 +4,19 @@ import { Ship } from "@entities/ships/model/types";
 interface ShipsState {
   ships: Ship[];
   sortOrder: "ascending" | "descending";
+  filterByLevel: number | null;
+  filterByNation: string | null;
+  filterByType: string | null;
+  filterByTitle: string | null;
 }
 
 export const initialState: ShipsState = {
   ships: [],
   sortOrder: "ascending",
+  filterByLevel: null,
+  filterByNation: null,
+  filterByType: null,
+  filterByTitle: null,
 };
 
 export const shipsSlice = createSlice({
@@ -18,9 +26,9 @@ export const shipsSlice = createSlice({
     setShip(state, action) {
       state.ships = action.payload;
     },
+
     setSortBy(state, action: PayloadAction<string>) {
       const field = action.payload;
-
       if (field === "level") {
         if (state.sortOrder === "ascending") {
           state.ships.sort((a, b) => {
@@ -60,6 +68,20 @@ export const shipsSlice = createSlice({
         }
       }
     },
+
+    setFilterByLevel(state, action: PayloadAction<number | null>) {
+      state.filterByLevel = action.payload;
+    },
+    setFilterByNation(state, action: PayloadAction<string | null>) {
+      state.filterByNation = action.payload;
+    },
+    setFilterByType(state, action: PayloadAction<string | null>) {
+      state.filterByType = action.payload;
+    },
+    setFilterByTitle(state, action: PayloadAction<string | null>) {
+      state.filterByTitle = action.payload;
+    },
+
     setOrderList(state, action: PayloadAction<"ascending" | "descending">) {
       state.sortOrder =
         state.sortOrder === "ascending" ? "descending" : "ascending";
@@ -72,5 +94,13 @@ export const shipsSlice = createSlice({
   },
 });
 
-export const { setShip, setSortBy, setOrderList } = shipsSlice.actions;
+export const {
+  setShip,
+  setSortBy,
+  setOrderList,
+  setFilterByLevel,
+  setFilterByNation,
+  setFilterByType,
+  setFilterByTitle,
+} = shipsSlice.actions;
 export default shipsSlice.reducer;

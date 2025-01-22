@@ -21,3 +21,34 @@
     gap: 10px;
   }
 }
+
+.ShipList__filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  .ShipList__group {
+    color: var(--color-button);
+    background-color: var(--background-color);
+    border: var(--card-border);
+    padding: 5px;
+
+    .ShipsFilterOptions {
+      @media screen and (hover: hover) {
+        &:hover {
+          background-color: var(--bg-card-hover);
+        }
+      }
+    }
+  }
+}
+
+.ShipList__filter__input{
+  width: 300px;
+  height: 40px;
+
+  color: var(--color-button);
+  background-color: var(--background-color);
+  border: var(--card-border);
+}

@@ -6,16 +6,16 @@ import { store } from "./store";
 
 import { registerSW } from "virtual:pwa-register";
 
-registerSW({immediate: true});
+registerSW({ immediate: true });
 
 import App from "@app/App.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Provider store={store}>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Provider>
   </StrictMode>,
 );

@@ -14,7 +14,33 @@ export const ShipList = () => {
 
   const { pageValues, handleNextPage, handleBackPage } = usePagination();
 
-  const ships = useSelector((state: RootState) => state.ships.ships);
+  const ships = useSelector((state: RootState) => {
+    let filteredShips = state.ships.ships;
+
+    if (state.ships.filterByLevel !== null) {
+      filteredShips = filteredShips.filter(
+        (ship) => ship.level === state.ships.filterByLevel,
+      );
+    }
+    if (state.ships.filterByNation) {
+      filteredShips = filteredShips.filter(
+        (ship) => ship.nation.name === state.ships.filterByNation,
+      );
+    }
+
+    if (state.ships.filterByType) {
+      filteredShips = filteredShips.filter(
+        (ship) => ship.type.name === state.ships.filterByType,
+      );
+    }
+
+    if (state.ships.filterByTitle) {
+      filteredShips = filteredShips.filter((ship) =>
+        ship.title.toLowerCase().includes(state.ships.filterByTitle!.toLowerCase()),
+      );
+    }
+    return filteredShips;
+  });
 
   useEffect(() => {}, [ships]);
 

@@ -1,6 +1,7 @@
 import { describe, expect, test } from "vitest";
 import {
   initialState,
+  setFilterByLevel,
   setOrderList,
   setShip,
   setSortBy,
@@ -63,7 +64,7 @@ describe("Тестирование слайса shipSlice", () => {
       },
     },
   ];
-  
+
   const shipListSortedByLevel = [
     {
       title: "Ship B",
