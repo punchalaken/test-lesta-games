@@ -6,6 +6,10 @@ import { client } from "@shared/config/apolloClient/apolloClient.ts";
 import { Provider } from "react-redux";
 import { store } from "./store";
 
+import { registerSW } from "virtual:pwa-register";
+
+registerSW({immediate: true});
+
 import App from "@app/App.tsx";
 
 createRoot(document.getElementById("root")!).render(
