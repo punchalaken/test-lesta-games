@@ -66,10 +66,7 @@
 
     .ShipCard__image {
       max-width: 40%;
-
       margin: 10px;
-
-      position: relative;
 
       @media screen and (max-width: 900px) {
         max-width: 400px;

@@ -9,7 +9,8 @@ export const useFetchShips = () => {
   const localStorageData = localStorage.getItem("vehicles");
 
   const { data, loading, error } = useQuery(GET_VEHICLES, {
-    skip: localStorageData ? true : false,
+    variables: { lang: "ru" },
+    skip: localStorageData !== null,
   });
 
   useEffect(() => {
@@ -17,9 +18,7 @@ export const useFetchShips = () => {
       const vehicles = JSON.parse(localStorageData);
       dispatch(setShip(vehicles));
       console.log("Данные получены оффлайн");
-    }
-
-    if (data?.vehicles) {
+    } else if (data?.vehicles) {
       const vehicles = [...data.vehicles];
       dispatch(setShip(vehicles));
       localStorage.setItem("vehicles", JSON.stringify(vehicles));
