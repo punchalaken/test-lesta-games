@@ -109,4 +109,4 @@ yarn build`
 
 ### 🌐 Ссылка на PWA приложение: 
 
-- [PWA](https://unique-sable-ec1fa9.netlify.app/)
+- [PWA](https://bucolic-baklava-f52231.netlify.app/ships)
